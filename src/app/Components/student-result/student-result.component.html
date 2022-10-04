@@ -1,0 +1,39 @@
+<div class="container">
+    <br /><br />
+    <!-- <app-student-view (selectStudent)="selectedStudent($event)"></app-student-view> -->
+    
+    <div class="result-heading text-center"><h4>Result</h4></div><br />
+    <div class="report-card text-center">
+        <div class="row mb-5">
+            <div class="col"></div>
+            <div class="col">
+            <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td>Roll No</td>
+                    <td>{{reportedStudent.rollNo}}</td>
+                  </tr>
+                  <tr>
+                    <td>Name</td>
+                    <td>{{reportedStudent.name}}</td>
+                  </tr>
+                  <tr>
+                    <td>email</td>
+                    <td>{{reportedStudent.email}}</td>
+                  </tr>
+                  <tr>
+                    <td>Score</td>
+                    <td>{{reportedStudent.score}}</td>
+                  </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="find-another-result text-center">
+        <a routerLink="/student-view" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <button type="button" class="btn btn-primary">Search Another</button>
+        </a>
+    </div>
+</div>

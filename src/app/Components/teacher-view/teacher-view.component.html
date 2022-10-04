@@ -1,0 +1,37 @@
+<div class="container">
+    <br />
+    <div class="teacher-header">
+        <div class="row">
+            <div class="col text-left">
+                Total {{totalStudents}} Students
+            </div>
+            <div class="col"></div>
+            <div class="col d-flex justify-content-end">
+                <a [routerLink]="['add-student']" routerLinkActive="active" ariaCurrentWhenActive="page"><button class="btn btn-primary">Add New</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="student-list">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Roll No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col">Score</th>
+                <th scope="col" id="actions-header">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let student of students">
+                <th>{{ student.rollNo }}</th>
+                <td>{{ student.name }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.score }}</td>
+                <td ><a [routerLink]="['edit-student/' + student.rollNo]" routerLinkActive="active" ariaCurrentWhenActive="page"><input type="button" class="btn btn-primary" id="edit-delete-btns-one" value="Edit" (click)="studentIdentifierForEdit(student)"></a><input type="button" class="btn btn-danger" id="edit-delete-btns-two" value="Delete" (click)="deleteStudent(student)"></td>
+            </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" (click)="backClicked()">Back</button>
+    </div>
+</div>
